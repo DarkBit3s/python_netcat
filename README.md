@@ -23,12 +23,12 @@ We begin by reading in all of the command-line options and setting the necessary
 If you run this with first time and you have no idea how to use it, simply write python and filename. It shows you useful usage information.
 
 after copying code and running into your computer. for localhost testing Run the code as:
-**# python_netcat.py -l -p 9999 -c**
+**# python_netcat.py -l -p 9999 -c**.
 Now you can fire up another terminal or cmd.exe , and run our script in
 client mode. Remember that our script is reading from stdin and will do so
 until the EOF (end-of-file) marker is received. To send EOF, hit ctrl -D on
 your keyboard:
-**# python python_netcat.py -t localhost-p 9999**
+**# python python_netcat.py -t localhost-p 9999**.
 We can see after running this, we can run some local commands and
 receive back some output as if we had logged in via SSH or were on the
 box locally.We can also use our client to send out requests the good, old-
