@@ -8,7 +8,7 @@ definitely worth dropping a Python callback to give you secondary access
 without having to first burn one of your trojans or backdoors.
 
 To run this you have to python 2.7 install on your system.If you are running this on Linux simply by running 
-**python netcat.py -pera **
+******python netcat.py -pera ******
 
 and if you run this on window run this as 
 **python2 netcat.py -pera**
