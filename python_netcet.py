@@ -80,7 +80,7 @@ def client_handler(client_socket):
                 while True:
                         # show a simple prompt
                         client_socket.send("<BHP:#> ")
-                       
+                        print("Press Enter:")
                         # now we recive a command until we detect a linefeed(enter)
                         cmd_buffer = ""
                         while "\n" not in cmd_buffer:
@@ -146,7 +146,7 @@ def client_sender(buffer):
                                 if recv_len < 4096:
                                         break
                         
-                        print response, 
+                        print(response), 
                         
                         # wait for more input
                         buffer = raw_input("")
@@ -158,7 +158,7 @@ def client_sender(buffer):
                 
         except:
                 # just catch generic errors - you can do your homework to beef this up
-                print "[*] Exception! Exiting."
+                print("[*] Exception! Exiting.")
                 
                 # turn off the connection                  
                 client.close()  
@@ -168,20 +168,20 @@ def client_sender(buffer):
 
 # how to use it 
 def usage():
-        print "Netcat Replacement"
-        print
-        print "Usage: bhpnet.py -t target_host -p port"
-        print "-l --listen                - listen on [host]:[port] for incoming connections"
-        print "-e --execute=file_to_run   - execute the given file upon receiving a connection"
-        print "-c --command               - initialize a command shell"
-        print "-u --upload=destination    - upon receiving connection upload a file and write to [destination]"
-        print
-        print
-        print "Examples: "
-        print "bhpnet.py -t 192.168.0.1 -p 5555 -l -c"
-        print "bhpnet.py -t 192.168.0.1 -p 5555 -l -u=c:\\target.exe"
-        print "bhpnet.py -t 192.168.0.1 -p 5555 -l -e=\"cat /etc/passwd\""
-        print "echo 'ABCDEFGHI' | ./bhpnet.py -t 192.168.11.12 -p 135"
+        print("Netcat Replacement")
+        print()
+        print("Usage: bhpnet.py -t target_host -p port")
+        print("-l --listen                - listen on [host]:[port] for incoming connections")
+        print("-e --execute=file_to_run   - execute the given file upon receiving a connection")
+        print("-c --command               - initialize a command shell")
+        print("-u --upload=destination    - upon receiving connection upload a file and write to [destination]")
+        print()
+        print()
+        print("Examples: ")
+        print("bhpnet.py -t 192.168.0.1 -p 5555 -l -c")
+        print("bhpnet.py -t 192.168.0.1 -p 5555 -l -u=c:\\target.exe")
+        print("bhpnet.py -t 192.168.0.1 -p 5555 -l -e=\"cat /etc/passwd\"")
+        print("echo 'ABCDEFGHI' | ./bhpnet.py -t 192.168.11.12 -p 135")
         sys.exit(0)
 
 
@@ -200,7 +200,7 @@ def main():
         try:
                 opts, args = getopt.getopt(sys.argv[1:],"hle:t:p:cu:",["help","listen","execute","target","port","command","upload"])
         except getopt.GetoptError as err:
-                print str(err)
+                print(str(err))
                 usage()
                 
                 
